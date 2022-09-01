@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>TODO List</title>
+</head>
+<body>
+    <header class="px-8 py-2">
+        <div class="text-4xl text-b2d">Project Internship <span><img class="w-48" src="https://www.borntodev.com/wp-content/uploads/2018/09/Black_Yellow_white-12-re.png"></span></div>
+        pitchakorn thiprangsi
+    </header>
+    <div class="p-6 min-h-screen md:p-24 bg-slate-50">
+        <div class="text-6xl text-center pb-16">
+            TO-DO List
+            <div class="text-3xl text-center">
+                รายการที่ต้องทำ
+            </div>
+        </div>
+
+        <div class="p-6 text-2xl md:flex md:justify-center gap-6">
+            <div>
+                <label for="title">หัวเรื่อง</label>
+                <input id="title" class="p-2 border-2" type="text">
+            </div>
+            <div>
+                <label for="detail">รายละเอียด</label>
+                <input id="detail" class="w-96 p-2 border-2" type="text"></input>
+            </div>
+            <input id="add" type="button" class="text-2xl bg-yellow-300 p-2 px-6 hover:bg-yellow-400 cursor-pointer" value="เพิ่ม">
+        </div>
+        <div class="p-6">
+            <label for="search" class="text-2xl">ค้นหาตามสถานะ</label>
+            <select id="search" class="text-2xl">
+                <option value="0">ทั้งหมด</option>
+                <option value="1">กำลังทำ</option>
+                <option value="-1">สำเร็จ</option>
+            </select>
+            <div class="text-2xl">
+                ผลลัพธ์ <span id="searchResult"></span> / <span id="allResult"></span>
+            </div>
+        </div>
+        <div id="list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </div>
+
+    <div id="download" class="text-lg fixed bottom-0 right-0 bg-red-100 cursor-pointer">Download json</div>
+
+    <div id="edit" class="hidden fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
+        <div class="md:w-1/2 w-3/4 p-6 rounded-xl">
+            <div id="editTitle" class="text-4xl text-center">แก้ไข</div>
+            <div class="mt-4 text-2xl">
+                <div class="mb-5">
+                    <label for="titleModal">หัวเรื่อง</label>
+                    <input id="titleModal" type="text" class="w-full p-2 border border-gray-300 rounded-l shadow">
+                </div>
+                <div class="mb-5">
+                    <label for="detailModal">รายละเอียด</label>
+                    <input id="detailModal" type="text" class="w-full p-2 border border-gray-300 rounded-l shadow">
+                </div>
+                <div class="flex justify-between">
+                    <button id="cancelModal" type="button"
+                        class="w-1/4 p-3  bg-slate-50 hover:bg-slate-200 border-2 rounded-lg">ยกเลิก</button>
+                    <button id="submitModal" type="button"
+                        class="w-1/4 p-3 bg-yellow-300 hover:bg-yellow-400 rounded-lg">แก้ไข</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="utility.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
